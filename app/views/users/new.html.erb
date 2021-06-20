@@ -1,0 +1,27 @@
+<%= render 'form' %>
+<%= form_with(model: @user, local: true) do |form| %>
+  <div class ="container">
+    <h1> New User Account  </h1>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= form.label :Email  %>
+      <%= form.email_field :email %>
+    </div>
+    <div class="field">
+      <%= form.label :Password   %>
+      <%= form.password_field :password %>
+    </div>
+    <div class="field">
+      <%= form.label :Password_Confirmation  %>
+      <%= form.password_field :password_confirmation %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= form.submit"Créer mon compte" %>
+    </div>
+  </div>
+<% end %>
+  

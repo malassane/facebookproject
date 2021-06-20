@@ -1,0 +1,34 @@
+<h1>LISTE DE TOUS LES POSTS </h1>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MBlogs Dive</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/sample.css">
+</head>
+<body>
+<p><%= notice %></p>
+<table>
+    <tr>
+        <th>Image </th>
+        <th>Description</th>
+        <th>Action 1</th>
+        <th>Action 2</th>
+        <th>Action 3</th>
+    <tr>
+    <% @pictures.each do |p| %>
+        <tr>
+            <td><%= image_tag p.image.url  %></td>
+            <td><%= p.description %></td>
+            <td><%= link_to 'Details', picture_path(p.id) %></td>  
+            <td><%= link_to 'Editer', edit_picture_path(p.id) %></td> 
+            <td><%= link_to 'Supprimer', picture_path(p.id), method: :delete, data: { confirm: 'Voulez vous vraiment supprimer cette image ? '} %></td>
+        </tr>
+    <% end %>
+</table>
+<br>
+</body>
+</html>
+<%= link_to 'Nouveau Post', new_picture_path %>

@@ -1,0 +1,12 @@
+
+<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %> 
+    <div class = "login-container" >
+        <h1>New Session </h1> 
+        <%= f.label :email %> 
+        <%= f.email_field :email %><br>
+        <%= f.label :password %> 
+        <%= f.password_field :password %><br>
+        <%= f.submit "Connecter" %> 
+    </div>
+<% end %>
+

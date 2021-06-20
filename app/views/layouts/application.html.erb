@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FaceBookApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header class="page-footer font-small blue pt-4"">    
+    <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
+      <a class="navbar-brand" href="#">
+      <div class="style"><font size="12" color="blue">FACEBOOK CLONE</font></div></a>
+      <form class="form-inline my-2 my-lg-0">
+        <% if logged_in? %>
+          <%= link_to "Profile", user_path(current_user.id), class:"btn btn-primary btn-sm"%>
+          <%= link_to "Logout", session_path(current_user.id),class:"btn btn-primary btn-sm", method: :delete %>
+        <% else %>
+          <%= link_to "Login", new_session_path,class:"btn btn-primary btn-sm" %>
+          <%= link_to "SignUp", new_user_path,class:"btn btn-primary btn-sm" %>
+        <% end %>
+      </form>
+    </nav>
+  </header>
+  <body>
+    <div class = container > 
+      <% flash.each do |key, value| %> 
+        <%= content_tag(:div, value, class: "#{key}") %> 
+      <% end %>
+      <%= yield %>      
+    </div>
+  </body>
+  <!-- Footer -->
+  <footer style="background: blue;" class="page-footer font-small blue pt-4">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://diver.diveintocode.jp/"> Dive Into Code</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</html>

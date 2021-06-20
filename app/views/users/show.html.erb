@@ -1,0 +1,5 @@
+<h1> Votre Profile </h1>
+<p>Login :<%= @user.name %></p>
+<p>Email : <%= @user.email %></p>
+<%= link_to 'Voir les images ', pictures_path %> | 
+<%= link_to 'Mes Favoris ', favorite_image_path(id: current_user.id) %>

@@ -1,0 +1,22 @@
+<%= render 'form' %>
+<table>
+    <tr>
+        <th>Login </th>
+        <th>Email</th>
+        <th>Action 1</th>
+        <th>Action 2</th>
+        <th>Action 3</th>
+    <tr>
+    <% @users.each do |p| %>
+        <tr>
+            <td><%= p.name %></td>
+            <td><%= p.email %></td>
+            <td><%= link_to 'Details', user_path(p.id) %></td> 
+            <td><%= link_to 'Editer', edit_user_path(p.id) %></td> 
+            <td><%= link_to 'Supprimer', user_path(p.id), method: :delete, data: { confirm: 'Voulez vous vraiment supprimer cet utilisateur ? '} %></td>
+                 
+        </tr>
+    <% end %>
+</table>
+<br>
+<%= link_to 'Creer un nouvel utilisateur ', new_user_path %>
