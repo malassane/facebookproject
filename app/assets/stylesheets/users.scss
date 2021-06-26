@@ -9,3 +9,58 @@ padding: 2; //Marge à l'intérieur des cellules, équivalent de cellpadding
 .label_connexion{
 
 }
+body {
+    // background-attachment: url("images/background.wepb")
+    background-image: url(asset_path('pexels-maksim-goncharenok-4348589.jpg'));
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+    text-align: center;
+  }
+  
+  header {
+    width: 100%;
+    background-color: #2c3e50;
+    height: 54px;
+    margin: 0
+  }
+  header ul {
+    margin: 0 auto;
+    list-style: none;
+  }
+  header ul a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+  }
+  header li {
+    float: left;
+    width: auto;
+  }
+  header ul:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
+  #title{
+    color:white;
+    font-size: 50px;
+    font-family: "robotto";
+    font-style: oblique;
+  }
+  
+  
+  footer {
+    width: 100%;
+    background-color:#2c3e50;
+    padding: 20px 0 10px 0;
+    color: white;
+    margin: auto;
+    padding-bottom: 10px;
+    font-size: 12px;
+    // position: absolute;
+    bottom: 0;
+  }
+  
